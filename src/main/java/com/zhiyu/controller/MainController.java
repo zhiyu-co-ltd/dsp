@@ -12,6 +12,6 @@ public class MainController {
     @RequestMapping("/")
     @ResponseBody
     String home() {
-        return "Hello World!";
+        return "Hello World:zhaojianfan!";
     }
 }
