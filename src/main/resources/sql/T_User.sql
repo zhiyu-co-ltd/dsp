@@ -11,7 +11,7 @@
  Target Server Version : 50163
  File Encoding         : utf-8
 
- Date: 12/23/2016 13:37:02 PM
+ Date: 12/23/2016 18:21:22 PM
 */
 
 SET NAMES utf8;
@@ -31,6 +31,7 @@ CREATE TABLE `T_User` (
   `qq` varchar(255) DEFAULT NULL COMMENT '用户qq号',
   `weixin` varchar(255) DEFAULT NULL COMMENT '用户微信号',
   `type` int(8) NOT NULL DEFAULT '0' COMMENT '用户类型：0，注册用户；1，广告主用户；2:媒体主用户；3:广告主和媒体主用户',
+  `user_id` varchar(127) NOT NULL COMMENT '用户ID唯一标识',
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`) USING BTREE
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
