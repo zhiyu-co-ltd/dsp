@@ -11,25 +11,25 @@
  Target Server Version : 50163
  File Encoding         : utf-8
 
- Date: 12/25/2016 12:39:00 PM
+ Date: 12/25/2016 12:38:03 PM
 */
 
 SET NAMES utf8;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
---  Table structure for `T_User_Info_Company`
+--  Table structure for `T_Adplan`
 -- ----------------------------
-DROP TABLE IF EXISTS `T_User_Info_Company`;
-CREATE TABLE `T_User_Info_Company` (
+DROP TABLE IF EXISTS `T_Adplan`;
+CREATE TABLE `T_Adplan` (
   `id` int(8) NOT NULL AUTO_INCREMENT COMMENT '主键',
-  `user_id` int(8) NOT NULL,
-  `company_name` varchar(20) NOT NULL COMMENT '公司名称',
-  `company_number` varchar(20) NOT NULL COMMENT '组织机构代码',
-  `company_image` varchar(20) NOT NULL COMMENT '公司营业执照',
-  `company_url` varchar(125) DEFAULT NULL COMMENT '企业网址',
-  `company_address` varchar(125) DEFAULT NULL COMMENT '企业地址',
+  `user_id` varchar(127) NOT NULL COMMENT '用户唯一标识',
+  `name` varchar(127) NOT NULL COMMENT '推广计划名称',
+  `status` int(8) NOT NULL DEFAULT '0' COMMENT '推广计划状态；0:关闭；1：启用',
+  `dayconst` double(18,2) NOT NULL COMMENT '日限额',
+  `realtime_money` double(18,2) NOT NULL COMMENT '实时余额',
   `createtime` datetime NOT NULL COMMENT '创建时间',
+  `adplan_id` varchar(127) NOT NULL COMMENT '推广计划ID',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
