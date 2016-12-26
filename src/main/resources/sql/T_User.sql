@@ -1,7 +1,7 @@
 /*
  Navicat MySQL Data Transfer
 
- Source Server         : localhost_zhiyu
+ Source Server         : localhost
  Source Server Type    : MySQL
  Source Server Version : 50163
  Source Host           : localhost
@@ -11,7 +11,7 @@
  Target Server Version : 50163
  File Encoding         : utf-8
 
- Date: 12/25/2016 12:38:39 PM
+ Date: 12/26/2016 16:07:11 PM
 */
 
 SET NAMES utf8;
@@ -34,6 +34,9 @@ CREATE TABLE `T_User` (
   `user_id` varchar(127) NOT NULL COMMENT '用户ID唯一标识',
   `company_type` int(3) DEFAULT NULL COMMENT '企业类型：1，公司；0，个人',
   `ad_account_money` double(128,2) NOT NULL DEFAULT '0.00',
+  `cost_today` double(128,2) NOT NULL DEFAULT '0.00' COMMENT '今日花费',
+  `update_status` int(8) DEFAULT '1' COMMENT '余额和花费是否更新；1:未更新；0:已更新',
+  `update_time` datetime DEFAULT NULL COMMENT '余额和花费更新时间',
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`) USING BTREE
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;

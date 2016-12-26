@@ -1,7 +1,7 @@
 /*
  Navicat MySQL Data Transfer
 
- Source Server         : localhost_zhiyu
+ Source Server         : localhost
  Source Server Type    : MySQL
  Source Server Version : 50163
  Source Host           : localhost
@@ -11,7 +11,7 @@
  Target Server Version : 50163
  File Encoding         : utf-8
 
- Date: 12/25/2016 12:37:39 PM
+ Date: 12/26/2016 16:04:14 PM
 */
 
 SET NAMES utf8;
@@ -44,6 +44,7 @@ CREATE TABLE `T_Ad` (
   `delivery_time_type` int(8) NOT NULL COMMENT '投放时间段限制：0:全时间段；1:特定时间段；2:高级时间段',
   `delivery_time` varchar(255) NOT NULL COMMENT '投放时间段：0；全时间段；',
   `createtime` datetime NOT NULL COMMENT '创建时间',
+  `ad_type` int(8) DEFAULT NULL COMMENT '广告类型：0:banner;1:插屏；2:开屏；3:文字链；4:信息流；5:视频',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 

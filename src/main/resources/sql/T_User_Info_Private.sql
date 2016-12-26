@@ -1,7 +1,7 @@
 /*
  Navicat MySQL Data Transfer
 
- Source Server         : localhost_zhiyu
+ Source Server         : localhost
  Source Server Type    : MySQL
  Source Server Version : 50163
  Source Host           : localhost
@@ -11,7 +11,7 @@
  Target Server Version : 50163
  File Encoding         : utf-8
 
- Date: 12/25/2016 12:39:06 PM
+ Date: 12/26/2016 16:06:59 PM
 */
 
 SET NAMES utf8;

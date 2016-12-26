@@ -11,25 +11,25 @@
  Target Server Version : 50163
  File Encoding         : utf-8
 
- Date: 12/26/2016 16:04:33 PM
+ Date: 12/26/2016 16:08:02 PM
 */
 
 SET NAMES utf8;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
---  Table structure for `T_Adplan`
+--  Table structure for `T_Material_Image`
 -- ----------------------------
-DROP TABLE IF EXISTS `T_Adplan`;
-CREATE TABLE `T_Adplan` (
+DROP TABLE IF EXISTS `T_Material_Image`;
+CREATE TABLE `T_Material_Image` (
   `id` int(8) NOT NULL AUTO_INCREMENT COMMENT '主键',
-  `user_id` varchar(127) NOT NULL COMMENT '用户唯一标识',
-  `name` varchar(127) NOT NULL COMMENT '推广计划名称',
-  `status` int(8) NOT NULL DEFAULT '0' COMMENT '推广计划状态；0:关闭；1：启用',
-  `dayconst` double(18,2) NOT NULL COMMENT '日限额',
-  `realtime_money` double(18,2) NOT NULL COMMENT '实时余额',
+  `name` varchar(128) NOT NULL COMMENT '名称',
+  `ad_id` varchar(128) NOT NULL COMMENT '广告唯一标识',
+  `material_id` varchar(128) NOT NULL,
+  `image_url` varchar(128) NOT NULL COMMENT 'banner图片地址',
+  `size` varchar(20) NOT NULL COMMENT 'banner图片尺寸',
   `createtime` datetime NOT NULL COMMENT '创建时间',
-  `adplan_id` varchar(127) NOT NULL COMMENT '推广计划ID',
+  `type` int(8) NOT NULL COMMENT '类型：0:banner;1:插屏；2:开屏',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
