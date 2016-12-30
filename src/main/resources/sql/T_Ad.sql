@@ -11,7 +11,7 @@
  Target Server Version : 50163
  File Encoding         : utf-8
 
- Date: 12/26/2016 16:04:14 PM
+ Date: 12/30/2016 11:12:59 AM
 */
 
 SET NAMES utf8;
@@ -45,6 +45,7 @@ CREATE TABLE `T_Ad` (
   `delivery_time` varchar(255) NOT NULL COMMENT '投放时间段：0；全时间段；',
   `createtime` datetime NOT NULL COMMENT '创建时间',
   `ad_type` int(8) DEFAULT NULL COMMENT '广告类型：0:banner;1:插屏；2:开屏；3:文字链；4:信息流；5:视频',
+  `name` varchar(125) NOT NULL COMMENT '广告名称',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
