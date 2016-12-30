@@ -22,28 +22,47 @@
  * THE SOFTWARE.
  */
 
-package com.zhiyu.model;
+package com.zhiyu.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.zhiyu.mapper.CountryMapper;
+import com.zhiyu.model.Country;
+import com.zhiyu.service.CountryService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public class City extends BaseEntity {
-    private String name;
+import java.util.List;
 
-    private String state;
+/**
+ * @author liuzh
+ * @since 2015-12-19 11:09
+ */
+@Service
+public class CountryServiceImpl implements CountryService {
 
-    public String getName() {
-        return name;
+    @Autowired
+    private CountryMapper countryMapper;
+
+    public List<Country> getAll(Country country) {
+        if (country.getPage() != null && country.getRows() != null) {
+            PageHelper.startPage(country.getPage(), country.getRows(), "id");
+        }
+        return countryMapper.selectAll();
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public Country getById(Integer id) {
+        return countryMapper.selectByPrimaryKey(id);
     }
 
-    public String getState() {
-        return state;
+    public void deleteById(Integer id) {
+        countryMapper.deleteByPrimaryKey(id);
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public void save(Country country) {
+        if (country.getId() != null) {
+            countryMapper.updateByPrimaryKey(country);
+        } else {
+            countryMapper.insert(country);
+        }
     }
-
 }

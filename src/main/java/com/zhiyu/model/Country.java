@@ -22,12 +22,53 @@
  * THE SOFTWARE.
  */
 
-package com.zhiyu.mapper;
+package com.zhiyu.model;
 
+public class Country extends BaseEntity {
+    /**
+     * 名称
+     */
+    private String countryname;
 
-import com.zhiyu.model.City;
-import com.zhiyu.util.MyMapper;
+    /**
+     * 代码
+     */
+    private String countrycode;
 
+    /**
+     * 获取名称
+     *
+     * @return countryname - 名称
+     */
+    public String getCountryname() {
+        return countryname;
+    }
 
-public interface CityMapper extends MyMapper<City> {
+    /**
+     * 设置名称
+     *
+     * @param countryname 名称
+     */
+    public void setCountryname(String countryname) {
+        this.countryname = countryname;
+    }
+
+    /**
+     * 获取代码
+     *
+     * @return countrycode - 代码
+     */
+    public String getCountrycode() {
+        return countrycode;
+    }
+
+    /**
+     * 设置代码
+     *
+     * @param countrycode 代码
+     */
+    public void setCountrycode(String countrycode) {
+        this.countrycode = countrycode;
+    }
+
 }

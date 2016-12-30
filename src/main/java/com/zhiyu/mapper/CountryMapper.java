@@ -22,43 +22,12 @@
  * THE SOFTWARE.
  */
 
-package com.zhiyu.service;
-
-import com.github.pagehelper.PageHelper;
-import com.zhiyu.mapper.CityMapper;
-import com.zhiyu.model.City;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
+package com.zhiyu.mapper;
 
 
-@Service
-public class CityService {
+import com.zhiyu.model.Country;
+import com.zhiyu.util.MyMapper;
 
-    @Autowired
-    private CityMapper cityMapper;
+public interface CountryMapper extends MyMapper<Country> {
 
-    public List<City> getAll(City city) {
-        if (city.getPage() != null && city.getRows() != null) {
-            PageHelper.startPage(city.getPage(), city.getRows(), "id");
-        }
-        return cityMapper.selectAll();
-    }
-
-    public City getById(Integer id) {
-        return cityMapper.selectByPrimaryKey(id);
-    }
-
-    public void deleteById(Integer id) {
-        cityMapper.deleteByPrimaryKey(id);
-    }
-
-    public void save(City country) {
-        if (country.getId() != null) {
-            cityMapper.updateByPrimaryKey(country);
-        } else {
-            cityMapper.insert(country);
-        }
-    }
 }
