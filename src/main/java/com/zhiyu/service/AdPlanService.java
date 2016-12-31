@@ -32,6 +32,8 @@ import java.util.List;
 public interface AdPlanService {
     public  List<AdPlan> getAll(AdPlan adPlan);
 
+    public  List<AdPlan> query(String userId,String name);
+
     public AdPlan getById(Integer id) ;
 
     public void deleteById(Integer id) ;

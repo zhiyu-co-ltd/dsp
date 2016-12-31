@@ -26,22 +26,16 @@
     <div class="middle">
         <h1 style="padding: 50px 0 20px;">广告计划列表</h1>
 
-        <form action="${request.contextPath}/adPlans" method="post">
+        <form action="${request.contextPath}/adPlans/query" method="post">
             <table class="gridtable" style="width:100%;">
                 <tr>
                     <th>用户名：</th>
-                    <td><input type="text" name="countryname"
-                               value="<#if queryParam.userId??>${queryParam.userId}</#if>"/></td>
+                    <td><input type="text" name="userId"
+                               value="<#if userId??>${userId}</#if>"/></td>
                     <th>计划名：</th>
-                    <td><input type="text" name="countrycode"
-                               value="<#if queryParam.name??>${queryParam.name}</#if>"/></td>
+                    <td><input type="text" name="name"
+                               value="<#if name??>${name}</#if>"/></td>
                     <td rowspan="2"><input type="submit" value="查询"/></td>
-                </tr>
-                <tr>
-                    <th>页码：</th>
-                    <td><input type="text" name="page" value="${page!0}"/></td>
-                    <th>页面大小：</th>
-                    <td><input type="text" name="rows" value="${rows!10}"/></td>
                 </tr>
             </table>
         </form>

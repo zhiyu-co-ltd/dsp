@@ -47,6 +47,11 @@ public class AdPlanServiceImpl implements AdPlanService {
         return adPlanMapper.selectAll();
     }
 
+    @Override
+    public List<AdPlan> query(String userId, String name) {
+        return adPlanMapper.query1(userId,name);
+    }
+
     public AdPlan getById(Integer id) {
         return adPlanMapper.selectByPrimaryKey(id);
     }

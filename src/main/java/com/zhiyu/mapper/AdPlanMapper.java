@@ -30,6 +30,9 @@ import com.zhiyu.util.MyMapper;
 import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.common.MySqlMapper;
 
-public interface AdPlanMapper  extends Mapper<AdPlan>, MySqlMapper<AdPlan> {
+import java.util.List;
+
+public interface AdPlanMapper  extends MyMapper<AdPlan> {
+    public List<AdPlan> query1(String userId,String name);
 
 }

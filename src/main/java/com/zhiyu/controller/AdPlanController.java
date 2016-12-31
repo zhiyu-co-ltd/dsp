@@ -27,11 +27,13 @@ package com.zhiyu.controller;
 import com.github.pagehelper.PageInfo;
 import com.zhiyu.model.AdPlan;
 import com.zhiyu.service.AdPlanService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -41,6 +43,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/adPlans")
 public class AdPlanController {
+    Logger log = Logger.getLogger(AdPlanController.class);
 
     @Autowired
     private AdPlanService adPlanServiceImpl;
@@ -53,6 +56,18 @@ public class AdPlanController {
         result.addObject("queryParam", adPlan);
         result.addObject("page", adPlan.getPage());
         result.addObject("rows", adPlan.getRows());
+        return result;
+    }
+
+
+    @RequestMapping(value = "/query")
+    public ModelAndView query(@RequestParam(value = "userId", required = false) String userId,@RequestParam(value = "name", required = false) String name) {
+        ModelAndView result = new ModelAndView("adPlan/index");
+        log.info(">>>>>>>"+userId+"  "+name);
+        List<AdPlan> adPlanList = adPlanServiceImpl.query(userId,name);
+        result.addObject("pageInfo", new PageInfo<AdPlan>(adPlanList));
+        result.addObject("userId", userId);
+        result.addObject("name", name);
         return result;
     }
 
