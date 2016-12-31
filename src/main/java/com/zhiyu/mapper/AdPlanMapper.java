@@ -27,12 +27,11 @@ package com.zhiyu.mapper;
 
 import com.zhiyu.model.AdPlan;
 import com.zhiyu.util.MyMapper;
-import tk.mybatis.mapper.common.Mapper;
-import tk.mybatis.mapper.common.MySqlMapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 public interface AdPlanMapper  extends MyMapper<AdPlan> {
-    public List<AdPlan> query1(String userId,String name);
+     List<AdPlan> query1(@Param("userId") String userId, @Param("name") String name);
 
 }

@@ -26,7 +26,7 @@
     <div class="middle">
         <h1 style="padding: 50px 0 20px;">广告计划列表</h1>
 
-        <form action="${request.contextPath}/adPlans/query" method="post">
+        <form action="${request.contextPath}/adPlan/query" method="post">
             <table class="gridtable" style="width:100%;">
                 <tr>
                     <th>用户名：</th>
@@ -111,7 +111,7 @@
         <table class="gridtable" style="width:100%;">
             <thead>
             <tr>
-                <th colspan="8">查询结果 - [<a href="${request.contextPath}/adPlans/add">新增广告计划</a>]</th>
+                <th colspan="8">查询结果 - [<a href="${request.contextPath}/adPlan/add">新增广告计划</a>]</th>
             </tr>
             <tr>
                 <th>ID</th>
@@ -135,8 +135,8 @@
                     <td>${adPlan.realtimeMoney}</td>
                     <td>${adPlan.adplanId}</td>
                     <td style="text-align:center;">[<a
-                            href="${request.contextPath}/adPlans/view/${adPlan.id}">修改</a>] -
-                        [<a href="${request.contextPath}/adPlans/delete/${adPlan.id}">删除</a>]
+                            href="${request.contextPath}/adPlan/view/${adPlan.id}">修改</a>] -
+                        [<a href="${request.contextPath}/adPlan/delete/${adPlan.id}">删除</a>]
                     </td>
                 </tr>
                 </#list>
@@ -146,10 +146,10 @@
             <tr>
                 <#if pageInfo.hasPreviousPage>
                     <td>
-                        <a href="${request.contextPath}/adPlans?page=1&rows=${pageInfo.pageSize}&countryname=${queryParam.countryname}&countrycode=${queryParam.countrycode}">首页</a>
+                        <a href="${request.contextPath}/adPlan/list?page=1&rows=${pageInfo.pageSize}&countryname=${queryParam.countryname}&countrycode=${queryParam.countrycode}">首页</a>
                     </td>
                     <td>
-                        <a href="${request.contextPath}/adPlans?page=${pageInfo.prePage}&rows=${pageInfo.pageSize}&countryname=${queryParam.countryname}&countrycode=${queryParam.countrycode}">前一页</a>
+                        <a href="${request.contextPath}/adPlan/list?page=${pageInfo.prePage}&rows=${pageInfo.pageSize}&countryname=${queryParam.countryname}&countrycode=${queryParam.countrycode}">前一页</a>
                     </td>
                 </#if>
                 <#list pageInfo.navigatepageNums as nav>
@@ -158,16 +158,16 @@
                     </#if>
                     <#if nav != pageInfo.pageNum>
                         <td>
-                            <a href="${request.contextPath}/adPlans?page=${nav}&rows=${pageInfo.pageSize}&countryname=<#if queryParam.countryname??>${queryParam.countryname}</#if>&countrycode=<#if queryParam.countrycode??>${queryParam.countrycode}</#if>">${nav}</a>
+                            <a href="${request.contextPath}/adPlan?page=${nav}&rows=${pageInfo.pageSize}&countryname=<#if queryParam.countryname??>${queryParam.countryname}</#if>&countrycode=<#if queryParam.countrycode??>${queryParam.countrycode}</#if>">${nav}</a>
                         </td>
                     </#if>
                 </#list>
                 <#if pageInfo.hasNextPage>
                     <td>
-                        <a href="${request.contextPath}/adPlans?page=${pageInfo.nextPage}&rows=${pageInfo.pageSize}&countryname=<#if queryParam.countryname??>${queryParam.countryname}</#if>&countrycode=<#if queryParam.countrycode??>${queryParam.countrycode}</#if>">下一页</a>
+                        <a href="${request.contextPath}/adPlan?page=${pageInfo.nextPage}&rows=${pageInfo.pageSize}&countryname=<#if queryParam.countryname??>${queryParam.countryname}</#if>&countrycode=<#if queryParam.countrycode??>${queryParam.countrycode}</#if>">下一页</a>
                     </td>
                     <td>
-                        <a href="${request.contextPath}/adPlans?page=${pageInfo.pages}&rows=${pageInfo.pageSize}&countryname=<#if queryParam.countryname??>${queryParam.countryname}</#if>&countrycode=<#if queryParam.countrycode??>${queryParam.countrycode}</#if>">尾页</a>
+                        <a href="${request.contextPath}/adPlan?page=${pageInfo.pages}&rows=${pageInfo.pageSize}&countryname=<#if queryParam.countryname??>${queryParam.countryname}</#if>&countrycode=<#if queryParam.countrycode??>${queryParam.countrycode}</#if>">尾页</a>
                     </td>
                 </#if>
             </tr>

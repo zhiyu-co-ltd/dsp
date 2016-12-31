@@ -28,6 +28,7 @@ import com.github.pagehelper.PageHelper;
 import com.zhiyu.mapper.AdPlanMapper;
 import com.zhiyu.model.AdPlan;
 import com.zhiyu.service.AdPlanService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,6 +38,7 @@ import java.util.List;
 @Service
 public class AdPlanServiceImpl implements AdPlanService {
 
+    Logger log = Logger.getLogger(AdPlanServiceImpl.class);
     @Autowired
     private AdPlanMapper adPlanMapper;
 

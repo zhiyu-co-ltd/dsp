@@ -41,14 +41,13 @@ import java.util.List;
 
 
 @Controller
-@RequestMapping("/adPlans")
 public class AdPlanController {
     Logger log = Logger.getLogger(AdPlanController.class);
 
     @Autowired
     private AdPlanService adPlanServiceImpl;
 
-    @RequestMapping
+    @RequestMapping("/adPlan/list")
     public ModelAndView getAll(AdPlan adPlan) {
         ModelAndView result = new ModelAndView("adPlan/index");
         List<AdPlan> adPlanList = adPlanServiceImpl.getAll(adPlan);
@@ -60,25 +59,28 @@ public class AdPlanController {
     }
 
 
-    @RequestMapping(value = "/query")
+    @RequestMapping(value = "/adPlan/query")
     public ModelAndView query(@RequestParam(value = "userId", required = false) String userId,@RequestParam(value = "name", required = false) String name) {
         ModelAndView result = new ModelAndView("adPlan/index");
         log.info(">>>>>>>"+userId+"  "+name);
         List<AdPlan> adPlanList = adPlanServiceImpl.query(userId,name);
-        result.addObject("pageInfo", new PageInfo<AdPlan>(adPlanList));
-        result.addObject("userId", userId);
-        result.addObject("name", name);
+        log.info(">>>>>>>"+adPlanList.size()+"  "+adPlanList.get(0).toString());
+        PageInfo pageInfo = new PageInfo<AdPlan>(adPlanList);
+        result.addObject("pageInfo", pageInfo);
+        log.info(">>>>>>>"+pageInfo.toString());
+        //result.addObject("userId", userId);
+        //result.addObject("name", name);
         return result;
     }
 
-    @RequestMapping(value = "/add")
+    @RequestMapping(value = "/adPlan/add")
     public ModelAndView add() {
         ModelAndView result = new ModelAndView("adPlan/view");
         result.addObject("adPlan", new AdPlan());
         return result;
     }
 
-    @RequestMapping(value = "/view/{id}")
+    @RequestMapping(value = "/adPlan/view/{id}")
     public ModelAndView view(@PathVariable Integer id) {
         ModelAndView result = new ModelAndView("adPlan/view");
         AdPlan adPlan = adPlanServiceImpl.getById(id);
@@ -86,7 +88,7 @@ public class AdPlanController {
         return result;
     }
 
-    @RequestMapping(value = "/delete/{id}")
+    @RequestMapping(value = "/adPlan/delete/{id}")
     public ModelAndView delete(@PathVariable Integer id, RedirectAttributes ra) {
         ModelAndView result = new ModelAndView("redirect:/adPlans");
         adPlanServiceImpl.deleteById(id);
@@ -94,7 +96,7 @@ public class AdPlanController {
         return result;
     }
 
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    @RequestMapping(value = "/adPlan/save", method = RequestMethod.POST)
     public ModelAndView save(AdPlan adPlan) {
         ModelAndView result = new ModelAndView("adPlan/view");
         String msg = adPlan.getId() == null ? "新增成功!" : "更新成功!";
