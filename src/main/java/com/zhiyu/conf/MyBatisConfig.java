@@ -76,6 +76,8 @@ public class MyBatisConfig implements TransactionManagementConfigurer {
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         try {
             bean.setMapperLocations(resolver.getResources("classpath:mapper/*.xml"));
+            //typealiases package
+            bean.setTypeAliasesPackage("com.zhiyu.model");
             return bean.getObject();
         } catch (Exception e) {
             e.printStackTrace();

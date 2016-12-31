@@ -1,71 +1,69 @@
 package com.zhiyu.model;
 
+
+import javax.persistence.Column;
+import javax.persistence.Table;
+
 /**
  * Created by zhaojianfan on 16/12/29.
  */
-public class AdPlan {
+@Table(name="T_Adplan")
+public class AdPlan  extends BaseEntity{
 
-    private int id;
-    private String UserId;
-    private String Name;
-    private String Status;
-    private String DayConst;
-    private String RealtimeMoney;
-    private String AdplanId;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    private String userId;
+    private String name;
+    private String status;
+    @Column(name = "dayconst")
+    private String dayConst;
+    private String realtimeMoney;
+    private String adplanId;
 
     public String getUserId() {
-        return UserId;
+        return userId;
     }
 
     public void setUserId(String userId) {
-        UserId = userId;
+        this.userId = userId;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getStatus() {
-        return Status;
+        return status;
     }
 
     public void setStatus(String status) {
-        Status = status;
+        this.status = status;
     }
 
     public String getDayConst() {
-        return DayConst;
+        return dayConst;
     }
 
     public void setDayConst(String dayConst) {
-        DayConst = dayConst;
+        this.dayConst = dayConst;
     }
 
     public String getRealtimeMoney() {
-        return RealtimeMoney;
+        return realtimeMoney;
     }
 
     public void setRealtimeMoney(String realtimeMoney) {
-        RealtimeMoney = realtimeMoney;
+        this.realtimeMoney = realtimeMoney;
     }
 
     public String getAdplanId() {
-        return AdplanId;
+        return adplanId;
     }
 
     public void setAdplanId(String adplanId) {
-        AdplanId = adplanId;
+        this.adplanId = adplanId;
     }
 }
