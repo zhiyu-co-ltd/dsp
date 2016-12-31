@@ -14,7 +14,6 @@ public class AdPlan  extends BaseEntity{
     private String userId;
     private String name;
     private String status;
-    @Column(name = "dayconst")
     private String dayConst;
     private String realtimeMoney;
     private String adplanId;

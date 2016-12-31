@@ -5,18 +5,36 @@
 </head>
 <body style="margin-top:50px;overflow: hidden;">
 <form action="${request.contextPath}/adPlans/save" method="post">
-    <input type="hidden" name="id" value="<#if country.id??>${country.id}</#if>"/>
+    <input type="hidden" name="id" value="<#if adPlan.id??>${adPlan.id}</#if>"/>
     <table class="gridtable" style="width:800px;">
         <tr>
             <th colspan="5">广告计划 - [<a href="${request.contextPath}/adPlans">返回</a>]</th>
         </tr>
         <tr>
-            <th>国家(地区)名称：</th>
-            <td><input type="text" name="countryname" value="<#if country.countryname??>${country.countryname}</#if>"/>
+
+            <th>用户标识：</th>
+            <td><input type="text" name="userId" value="<#if adPlan.userId??>${adPlan.userId}</#if>"/>
             </td>
-            <th>国家(地区)代码：</th>
-            <td><input type="text" name="countrycode" value="<#if country.countrycode??>${country.countrycode}</#if>"/>
+            <th>计划名称：</th>
+            <td><input type="text" name="name" value="<#if adPlan.name??>${adPlan.name}</#if>"/>
             </td>
+            <th>状态：</th>
+            <td><input type="text" name="status" value="<#if adPlan.status??>${adPlan.status}</#if>"/>
+            </td>
+            </tr>
+        <tr>
+            <th>日限额：</th>
+            <td><input type="text" name="dayConst" value="<#if adPlan.dayConst??>${adPlan.dayConst}</#if>"/>
+            </td>
+            <th>实时余额：</th>
+            <td><input type="text" name="realtimeMoney" value="<#if adPlan.realtimeMoney??>${adPlan.realtimeMoney}</#if>"/>
+            </td>
+            <th>推广计划ID：</th>
+            <td><input type="text" name="adplanId" value="<#if adPlan.adplanId??>${adPlan.adplanId}</#if>"/>
+            </td>
+
+        </tr>
+        <tr>
             <td><input type="submit" value="保存"/></td>
         </tr>
     <#if msg??>

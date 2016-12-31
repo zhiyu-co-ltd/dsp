@@ -117,7 +117,7 @@
         <table class="gridtable" style="width:100%;">
             <thead>
             <tr>
-                <th colspan="4">查询结果 - [<a href="${request.contextPath}/adPlans/add">新增广告计划</a>]</th>
+                <th colspan="8">查询结果 - [<a href="${request.contextPath}/adPlans/add">新增广告计划</a>]</th>
             </tr>
             <tr>
                 <th>ID</th>
