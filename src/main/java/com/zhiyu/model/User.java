@@ -1,14 +1,16 @@
 package com.zhiyu.model;
 
+import javax.persistence.Table;
+
 /**
  * Created by zhaojianfan on 16/12/29.
  */
-public class User {
+@Table(name="T_User")
+public class User extends BaseEntity{
 
-    private int Id;
     private String UserId;
     private String Email;
-    private String QQ;
+    private String Qq;
     private String Password;
     private String Name;
     private String Phone;
@@ -20,13 +22,6 @@ public class User {
     private int UpdateStatus;
     private String  UpdateTime;
 
-    public int getId() {
-        return Id;
-    }
-
-    public void setId(int id) {
-        Id = id;
-    }
 
     public String getUserId() {
         return UserId;
@@ -44,12 +39,12 @@ public class User {
         Email = email;
     }
 
-    public String getQQ() {
-        return QQ;
+    public String getQq() {
+        return Qq;
     }
 
-    public void setQQ(String QQ) {
-        this.QQ = QQ;
+    public void setQq(String Qq) {
+        this.Qq= Qq;
     }
 
     public String getPassword() {
