@@ -1,25 +1,19 @@
 package com.zhiyu.model;
 
+import javax.persistence.Table;
+
 /**
  * Created by zhaojianfan on 16/12/29.
  */
-public class UserInfoConmpany {
+@Table(name="T_User_Info_Company")
+public class UserInfoCompany extends BaseEntity{
 
-    private int Id;
     private String UserId;
     private String CompanyName;
     private String CompanyNumber;
     private String CompanyImage;
     private String CompanyUrl;
     private String CompanyAddress;
-
-    public int getId() {
-        return Id;
-    }
-
-    public void setId(int id) {
-        Id = id;
-    }
 
     public String getUserId() {
         return UserId;

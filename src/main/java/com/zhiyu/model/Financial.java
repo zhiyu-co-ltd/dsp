@@ -1,23 +1,17 @@
 package com.zhiyu.model;
 
+import javax.persistence.Table;
+
 /**
  * Created by zhaojianfan on 16/12/29.
  */
-public class Financial {
+@Table(name="T_Financial")
+public class Financial  extends BaseEntity{
 
-    private int id;
     private String UserId;
     private String Money;
     private String Type;
     private String Description;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getUserId() {
         return UserId;

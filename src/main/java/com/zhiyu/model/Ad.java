@@ -1,11 +1,13 @@
 package com.zhiyu.model;
 
+import javax.persistence.Table;
+
 /**
  * Created by zhaojianfan on 16/12/30.
  */
-public class Ad {
+@Table(name="T_Ad")
+public class Ad extends BaseEntity{
 
-    private int id;
     private String Name;
     private String UserId;
     private String AdPlanId;
@@ -28,14 +30,6 @@ public class Ad {
     private int DeliveryTimeType;
     private String DeliveryTime;
     private int AdType;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getName() {
         return Name;

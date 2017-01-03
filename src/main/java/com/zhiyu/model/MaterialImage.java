@@ -1,25 +1,19 @@
 package com.zhiyu.model;
 
+import javax.persistence.Table;
+
 /**
  * Created by zhaojianfan on 16/12/29.
  */
-public class MaterialImage {
+@Table(name="T_Material_Image")
+public class MaterialImage extends BaseEntity {
 
-    private int id;
     private String Name;
     private String AdId;
     private String MaterialId;
     private String Size;
     private String ImageUrl;
     private int type;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getName() {
         return Name;

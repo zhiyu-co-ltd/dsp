@@ -1,11 +1,13 @@
 package com.zhiyu.model;
 
+import javax.persistence.Table;
+
 /**
  * Created by zhaojianfan on 16/12/30.
  */
-public class CardInformationFlow {
+@Table(name="T_Card_Information_Flow")
+public class CardInformationFlow extends BaseEntity{
 
-    private int id;
     private String MaterialId;
     private String AdId;
     private String Name;
@@ -15,14 +17,6 @@ public class CardInformationFlow {
     private String IconUrl;
     private String ImageUrl;
     private int Type;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public int getType() {
         return Type;
@@ -95,4 +89,5 @@ public class CardInformationFlow {
     public void setImageUrl(String imageUrl) {
         ImageUrl = imageUrl;
     }
+
 }

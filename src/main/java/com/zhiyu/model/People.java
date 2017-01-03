@@ -1,22 +1,17 @@
 package com.zhiyu.model;
 
+import javax.persistence.Table;
+
 /**
  * Created by zhaojianfan on 16/12/29.
  */
-public class People {
+@Table(name="T_People")
+public class People extends BaseEntity{
 
-    private int id;
     private String name;
     private String PeopleId;
     private String ParentsId;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;

@@ -1,11 +1,13 @@
 package com.zhiyu.model;
 
+import javax.persistence.Table;
+
 /**
  * Created by zhaojianfan on 16/12/29.
  */
-public class MaterialVideo {
+@Table(name="T_Material_Video")
+public class MaterialVideo extends BaseEntity {
 
-    private int Id;
     private String Name;
     private String MaterialId;
     private String AdId;
@@ -14,14 +16,6 @@ public class MaterialVideo {
     private String VideoUrl;
     private String ImageUrl;
     private int PlayTime;
-
-    public int getId() {
-        return Id;
-    }
-
-    public void setId(int id) {
-        Id = id;
-    }
 
     public String getName() {
         return Name;

@@ -1,22 +1,16 @@
 package com.zhiyu.model;
 
+import javax.persistence.Table;
+
 /**
  * Created by zhaojianfan on 16/12/29.
  */
-public class Area {
+@Table(name="T_Area")
+public class Area extends BaseEntity{
 
-    private int id;
     private String name;
     private String AreaId;
-    private String ParentsId;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    private String ParentId;
 
     public String getName() {
         return name;
@@ -34,11 +28,11 @@ public class Area {
         AreaId = areaId;
     }
 
-    public String getParentsId() {
-        return ParentsId;
+    public String getParentId() {
+        return ParentId;
     }
 
-    public void setParentsId(String parentsId) {
-        ParentsId = parentsId;
+    public void setParentId(String parentId) {
+        ParentId = parentId;
     }
 }

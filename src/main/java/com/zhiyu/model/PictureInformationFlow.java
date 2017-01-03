@@ -1,11 +1,13 @@
 package com.zhiyu.model;
 
+import javax.persistence.Table;
+
 /**
  * Created by zhaojianfan on 16/12/29.
  */
-public class PictureInformationFlow {
+@Table(name="T_Picture_Information_Flow")
+public class PictureInformationFlow extends BaseEntity{
 
-    private int id;
     private String name;
     private String Size;
     private String MarerialId;
@@ -29,14 +31,6 @@ public class PictureInformationFlow {
     private String ImageUrl7;
     private String ImageUrl8;
     private String ImageUrl9;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
