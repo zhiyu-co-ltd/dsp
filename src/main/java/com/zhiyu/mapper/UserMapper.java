@@ -36,6 +36,6 @@ public interface UserMapper extends MyMapper<User>{
 //        @Select("select * from user where name = #{name}")
 //        User findUserByName(@Param("name")String name);
 
-      User findUserByEmail(@Param("email") String email);
+      User findUserByEmail(@Param("Email") String email);
 
 }
