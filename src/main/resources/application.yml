@@ -30,8 +30,8 @@ spring:
         maxOpenPreparedStatements: 20
     mvc:
         view:
-            prefix: /templates/
-            suffix: .ftl
+            prefix: /static/zhiyu/
+            suffix: .html
     freemarker:
         cache: false
         request-context-attribute: request
