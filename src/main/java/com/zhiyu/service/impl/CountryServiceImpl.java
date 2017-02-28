@@ -44,10 +44,15 @@ public class CountryServiceImpl implements CountryService {
     private CountryMapper countryMapper;
 
     public List<Country> getAll(Country country) {
+        System.out.println(">>>>>>>>>>>"+country.getPage()+"-"+country.getRows()+"-"+country.getCountryname()+"-"+country.getCountrycode());
         if (country.getPage() != null && country.getRows() != null) {
             PageHelper.startPage(country.getPage(), country.getRows(), "id");
         }
         return countryMapper.selectAll();
+    }
+
+    public List<Country> getListByParam(Country country){
+        return countryMapper.select(country);
     }
 
     public Country getById(Integer id) {
