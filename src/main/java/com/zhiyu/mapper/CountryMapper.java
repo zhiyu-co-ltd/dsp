@@ -28,6 +28,9 @@ package com.zhiyu.mapper;
 import com.zhiyu.model.Country;
 import com.zhiyu.util.MyMapper;
 
+import java.util.List;
+
 public interface CountryMapper extends MyMapper<Country> {
 
+    //public List<Country> getCountryList(String country);
 }
